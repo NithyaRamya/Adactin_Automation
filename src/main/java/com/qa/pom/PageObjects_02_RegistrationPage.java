@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import java.util.Scanner;
 
 public class PageObjects_02_RegistrationPage {
 
@@ -27,6 +28,9 @@ public class PageObjects_02_RegistrationPage {
 
 	@FindBy(name = "email_add")
 	WebElement txt_Email_Address;
+	
+	@FindBy(id = "captcha-form")
+	WebElement txt_captcha;
 
 	@FindBy(xpath = "//img[@src='img/refresh.png']")
 	WebElement img_captcha_refresh;
@@ -52,6 +56,12 @@ public class PageObjects_02_RegistrationPage {
 
 	public void _backtologinpage() {
 		link_backtologinpage.click();
+
+	}
+	
+	public boolean registerpagenavigationcheck() {
+		link_backtologinpage.isEnabled();
+		return true;
 
 	}
 
@@ -83,6 +93,12 @@ public class PageObjects_02_RegistrationPage {
 	public void captcha_refresh() {
 		img_captcha_refresh.click();
 
+	}
+	public void captcha_text(String Captcha) {
+		//txt_captcha.sendKeys(Captcha);
+        Scanner input = new Scanner(System.in);
+        System.out.println(Captcha);
+       // String Captcha = input.next();
 	}
 
 	public void TandC() {

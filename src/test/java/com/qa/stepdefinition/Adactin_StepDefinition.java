@@ -36,6 +36,7 @@ public class Adactin_StepDefinition extends BaseClass {
 	String drivePath = "C:\\Users\\NITHYA\\latest eclipse workspace\\Adactin_QA_04_06_24\\driver\\chromedriver.exe";
 	String URL = "https://adactinhotelapp.com/";
 
+	
 	@Given("user Lauches The Application")
 	public void user_lauches_the_application() {
 		// System.setProperty("webdriver.chrome.driver", drivePath);
@@ -254,4 +255,64 @@ public class Adactin_StepDefinition extends BaseClass {
 				"C:\\Users\\NITHYA\\latest eclipse workspace\\Adactin_QA_04_06_24\\ss\\down_MyItinerary.png");
 	}
 
+	// Register
+
+	@Given("user Is On Login Page")
+	public void user_is_on_login_page() {
+		lp = new PageObjects_01_LoginPage(driver);
+		lp.loginpagenavigationcheck();
+
+	}
+
+	@When("user Clicks New User Register Here Link")
+	public void user_clicks_new_user_register_here_link() {
+
+		lp.registration();
+	}
+
+	@Then("user Is Naviated To Registration Page")
+	public void user_is_naviated_to_registration_page() {
+		rp = new PageObjects_02_RegistrationPage(driver);
+		rp.registerpagenavigationcheck();
+	}
+
+	@Then("user Enter {string} In Username Field")
+	public void user_enter_username_in_username_field(String Username) {
+		rp.Username(Username);
+	}
+
+	@Then("user Enter {string} In Password Field")
+	public void user_enter_password_in_password_field(String Password) {
+		rp.Password(Password);
+	}
+
+	@Then("user Reconfirms Password Entering {string} In Confirm Password Field")
+	public void user_reconfirms_password_entering_same_password_in_confirm_password_field(String samePassword) {
+		rp.Confirm_Password(samePassword);
+	}
+
+	@Then("user Enter {string} In Full Name Field")
+	public void user_enter_fullname_in_full_name_field(String Fullname) {
+		rp.Full_Name(Fullname);
+	}
+
+	@Then("user Enter {string} In Email Address Field")
+	public void user_enter_email_address_in_email_address_field(String EmailAddress) {
+		rp.Email_Address(EmailAddress);
+	}
+
+	@Then("user Enters {string} Referring to Captcha Image")
+	public void user_enters_captcha_text_referring_to_captcha_image(String CaptchaText) {
+		rp.captcha_text(CaptchaText);
+	}
+
+	@Then("user Clicks TermsandConditions Checkbox")
+	public void user_clicks_termsand_conditions_checkbox() {
+		rp.TandC();
+	}
+
+	@Then("user Clicks Register Button")
+	public void user_clicks_register_button() {
+		rp.Register();
+	}
 }

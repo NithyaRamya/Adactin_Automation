@@ -65,6 +65,9 @@ public class PageObjects_01_LoginPage extends BaseClass{
 	public void registration() {
 		link_NewUserregistration.click();
 	}
+	public void loginpagenavigationcheck() {
+		System.out.println(link_NewUserregistration.isDisplayed());
+	}
 
 	public void GooglePlay() {
 		btn_GooglePlay.click();
