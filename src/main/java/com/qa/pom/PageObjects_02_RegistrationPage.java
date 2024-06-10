@@ -28,7 +28,7 @@ public class PageObjects_02_RegistrationPage {
 
 	@FindBy(name = "email_add")
 	WebElement txt_Email_Address;
-	
+
 	@FindBy(id = "captcha-form")
 	WebElement txt_captcha;
 
@@ -47,6 +47,12 @@ public class PageObjects_02_RegistrationPage {
 	@FindBy(id = "Reset")
 	WebElement btn_Reset;
 
+	@FindBy(xpath = "//a[@href='index.php']")
+	WebElement link_afterregistration;
+
+	@FindBy(xpath = "//span[@class='register_msg']")
+	WebElement msg_registerconfirm;
+
 	public PageObjects_02_RegistrationPage(WebDriver driver2) {
 
 		this.driver = driver2;
@@ -58,7 +64,7 @@ public class PageObjects_02_RegistrationPage {
 		link_backtologinpage.click();
 
 	}
-	
+
 	public boolean registerpagenavigationcheck() {
 		link_backtologinpage.isEnabled();
 		return true;
@@ -66,7 +72,11 @@ public class PageObjects_02_RegistrationPage {
 	}
 
 	public void Username(String Username) {
-		txt_Username.sendKeys(Username);
+		try {
+			txt_Username.sendKeys(Username);
+		} catch (Exception e) {
+			System.out.println("Username must contain minimum 8 characters");
+		}
 
 	}
 
@@ -94,11 +104,10 @@ public class PageObjects_02_RegistrationPage {
 		img_captcha_refresh.click();
 
 	}
+
 	public void captcha_text(String Captcha) {
-		//txt_captcha.sendKeys(Captcha);
-        Scanner input = new Scanner(System.in);
-        System.out.println(Captcha);
-       // String Captcha = input.next();
+		txt_captcha.sendKeys(Captcha);
+
 	}
 
 	public void TandC() {
@@ -120,6 +129,19 @@ public class PageObjects_02_RegistrationPage {
 
 	public void btn_Reset() {
 		btn_Reset.click();
+
+	}
+
+	public void clickHeretoLogin() {
+
+		if (link_afterregistration.isDisplayed()) {
+			link_afterregistration.click();
+		}
+	}
+
+	public void msgcontent() {
+
+		System.out.println(msg_registerconfirm.getText());
 
 	}
 }

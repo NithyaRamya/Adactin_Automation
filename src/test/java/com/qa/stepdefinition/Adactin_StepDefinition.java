@@ -1,5 +1,6 @@
 package com.qa.stepdefinition;
 
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -36,7 +37,6 @@ public class Adactin_StepDefinition extends BaseClass {
 	String drivePath = "C:\\Users\\NITHYA\\latest eclipse workspace\\Adactin_QA_04_06_24\\driver\\chromedriver.exe";
 	String URL = "https://adactinhotelapp.com/";
 
-	
 	@Given("user Lauches The Application")
 	public void user_lauches_the_application() {
 		// System.setProperty("webdriver.chrome.driver", drivePath);
@@ -301,9 +301,13 @@ public class Adactin_StepDefinition extends BaseClass {
 		rp.Email_Address(EmailAddress);
 	}
 
-	@Then("user Enters {string} Referring to Captcha Image")
-	public void user_enters_captcha_text_referring_to_captcha_image(String CaptchaText) {
-		rp.captcha_text(CaptchaText);
+	@Then("user Enters CaptchaText Referring to Captcha Image")
+	public void user_enters_captcha_text_referring_to_captcha_image() throws Exception {
+		// txt_captcha.sendKeys(Captcha);
+		//Scanner input = new Scanner(System.in);
+		//System.out.println("Captcha : ");
+		Thread.sleep(5000);
+		
 	}
 
 	@Then("user Clicks TermsandConditions Checkbox")
@@ -314,5 +318,7 @@ public class Adactin_StepDefinition extends BaseClass {
 	@Then("user Clicks Register Button")
 	public void user_clicks_register_button() {
 		rp.Register();
+		//rp.clickHeretoLogin();
+		rp.msgcontent();
 	}
 }
