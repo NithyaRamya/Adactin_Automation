@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
                  glue = "com\\qa\\stepdefinition",
 		      tags= ("@valid-invalidcred"),
 		         plugin = { "pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-				"html:08_06_24_2scenarios/10_06_24_2scenarios_htmlreport.html" })
+				"html:08_06_24_2scenarios/10_06_24_scenarios_htmlreport.html" })
 
 public class Test_Runner {
 
