@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.qa.base.BaseClass;
 
-public class PageObjects_SearchHotel extends BaseClass {
+public class PageObjects_03_SearchHotel extends BaseClass {
 
 	WebDriver driver;
 
@@ -67,7 +67,7 @@ public class PageObjects_SearchHotel extends BaseClass {
 	@FindBy(xpath = "//a[text()='Adactin.com']")
 	WebElement link_Adactin;
 
-	public PageObjects_SearchHotel(WebDriver driver2) {
+	public PageObjects_03_SearchHotel(WebDriver driver2) {
 
 		this.driver = driver2;
 		PageFactory.initElements(driver2, this);

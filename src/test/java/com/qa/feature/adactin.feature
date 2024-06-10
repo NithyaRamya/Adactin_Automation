@@ -1,5 +1,5 @@
 Feature: Checking Functionality of Adactin Application
-#@valid-invalidcred
+@valid-invalidcred
 Scenario Outline: Login
 Given user Lauches The Application
 When user Enter Valid "<Username>" In The Username Field

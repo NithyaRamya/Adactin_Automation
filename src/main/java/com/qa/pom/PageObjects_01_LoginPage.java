@@ -1,5 +1,6 @@
 package com.qa.pom;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.qa.base.BaseClass;
 
-public class PageObjects_LoginPage extends BaseClass{
+
+
+public class PageObjects_01_LoginPage extends BaseClass{
 
 	WebDriver driver;
 
@@ -35,8 +38,8 @@ public class PageObjects_LoginPage extends BaseClass{
 
 	@FindBy(xpath = "//a[text()='info@adactin.com']")
 	WebElement link_info;
-
-	public PageObjects_LoginPage(WebDriver driver2) {
+	
+	public PageObjects_01_LoginPage(WebDriver driver2) {
 
 		this.driver = driver2;
 		PageFactory.initElements(driver2, this);

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageObjects_SelectHotel {
+public class PageObjects_04_SelectHotel {
 
 	WebDriver driver;
 
@@ -33,7 +33,7 @@ public class PageObjects_SelectHotel {
 
 	
 
-	public PageObjects_SelectHotel(WebDriver driver2) {
+	public PageObjects_04_SelectHotel(WebDriver driver2) {
 
 		this.driver = driver2;
 		PageFactory.initElements(driver2, this);

@@ -12,11 +12,11 @@ import com.qa.base.BaseClass;
 
 import io.cucumber.core.backend.Backend;
 
-public class PageObjects_BookHotel extends BaseClass {
+public class PageObjects_05_BookHotel extends BaseClass {
 
 	 WebDriver driver;
 
-	public PageObjects_BookHotel(WebDriver driver2) {
+	public PageObjects_05_BookHotel(WebDriver driver2) {
 
 		this.driver = driver2;
 		PageFactory.initElements(driver2, this);
