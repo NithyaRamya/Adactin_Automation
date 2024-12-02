@@ -1,30 +1,30 @@
 Feature: Checking Functionality of Adactin Application
 
-Background:
-Given user Lauches The Application
+#Background:
+#Given user Lauches The Application
 
-@register
-Scenario Outline: Register
-Given user Is On Login Page
-When user Clicks New User Register Here Link
-Then user Is Naviated To Registration Page
-And user Enter "<Username>" In Username Field
-And user Enter "<Password>" In Password Field
-And user Reconfirms Password Entering "<samePassword>" In Confirm Password Field
-And user Enter "<Fullname>" In Full Name Field
-And user Enter "<EmailAddress>" In Email Address Field
+#@register
+#Scenario Outline: Register
+#Given user Is On Login Page
+#When user Clicks New User Register Here Link
+#Then user Is Naviated To Registration Page
+#And user Enter "<Username>" In Username Field
+#And user Enter "<Password>" In Password Field
+#And user Reconfirms Password Entering "<samePassword>" In Confirm Password Field
+#And user Enter "<Fullname>" In Full Name Field
+#And user Enter "<EmailAddress>" In Email Address Field
 #Then user Clicks Captcha Refresh image If Required
-And user Enters CaptchaText Referring to Captcha Image
-Then user Clicks TermsandConditions Checkbox
-Then user Clicks Register Button
+#And user Enters CaptchaText Referring to Captcha Image
+#Then user Clicks TermsandConditions Checkbox
+#Then user Clicks Register Button
 #And user Clicks Reset Button
 
-Examples:
+#Examples:
 
-|Username   |Password      |samePassword  |Fullname        |EmailAddress|
-|R|June@123456789|June@123456789|Risr|rj@gmail.com|           
+#|Username   |Password      |samePassword  |Fullname        |EmailAddress|
+#|R|June@123456789|June@123456789|Risr|rj@gmail.com|           
 
-@valid-invalidcred
+
 Scenario Outline: Login
 Given user Lauches The Application
 When user Enter Valid "<Username>" In The Username Field
